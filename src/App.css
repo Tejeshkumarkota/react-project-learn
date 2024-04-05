@@ -1,38 +1,45 @@
-.App {
+.site {
+  background-color: red;
+  color: #fff;
+}
+.nav-link.active {
+  font-weight: bold;
+}
+.ioc-learn {
+  width: 60px;
+  height: 59px;
+  background: url('../public/images/glt-sprites.png') -92px -10px;
+  display: inline-block;
+}
+.tag {
+  background-color: #005c67;
+  color: #fff;
   text-align: center;
+  position: absolute;
+  padding: 10px 30px;
+  font-weight: 600;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 230px;
+  z-index: 100;
+  top: -10px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ioc-volunteer {
+  width: 59px;
+  height: 59px;
+  background: url('../public/images/glt-sprites.png') -10px -92px;
+  display: inline-block;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ioc-share {
+  width: 54px;
+  height: 61px;
+  background: url('../public/images/glt-sprites.png') -172px -10px;
+  display: inline-block;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ioc-donation {
+  width: 42px;
+  height: 60px;
+  background: url('../public/images/glt-sprites.png') -10px -241px;
+  display: inline-block;
 }
