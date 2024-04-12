@@ -10,6 +10,7 @@ import User1 from './Pages/User1';
 import User2 from './Pages/User2';
 import Parent from './Pages/Parent';
 import Update from './Pages/Update';
+import FetchDetails from './Pages/FetchDetails';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/list" element={<List/>}/>
           <Route path="/create" element={<Create/>}/>
           <Route path="/edit/:studentid" element={<Update/>}/>
+          <Route path="/filter-list" element={<FetchDetails/>}/>
         </Routes>
       </BrowserRouter>
 
