@@ -13,7 +13,7 @@ const Create = () => {
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-            Authorization: "Bearer key"
+            // Authorization: "Bearer key"
         },
         body: JSON.stringify({
             name: name
