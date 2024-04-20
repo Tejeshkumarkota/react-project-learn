@@ -22,7 +22,7 @@ export default function List() {
   const deleteStudent = (id) => {
     const confirmation = window.confirm("Are you sure you want to delete this item?");
     if(confirmation) {
-      fetch("http://localhost:3000/students/"+id,{
+      fetch("http://localhost:3001/students/"+id,{
         method: "DELETE",
       })
       .then((res) => res.json())

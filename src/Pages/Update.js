@@ -12,7 +12,7 @@ const Update = () => {
   },[])
 
   const getSelectedData = () => {
-    fetch("http://localhost:3000/students/"+param.studentid)
+    fetch("http://localhost:3001/students/"+param.studentid)
     .then((res) => res.json())
     .then((data) => {
       setName(data.name);
@@ -21,7 +21,7 @@ const Update = () => {
 
   const updateStudent = () => {
     if(name) {
-    fetch("http://localhost:3000/students/"+param.studentid,{
+    fetch("http://localhost:3001/students/"+param.studentid,{
         method: "PATCH",
         headers: {
             Accept: "application/json",

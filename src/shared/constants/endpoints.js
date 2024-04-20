@@ -1,3 +1,3 @@
 export const Endpoints = {
-    STUDENTS: "http://localhost:3000/students"
+    STUDENTS: "http://localhost:3001/students"
 };
