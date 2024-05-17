@@ -13,7 +13,7 @@ function Child(props) {
         props.onSubmit(name);
     }
 
-    return (
+    return ( 
         <>
             <form onSubmit={handleSubmit}>
                 <input type="text" value={name} onChange={handleChange}/>

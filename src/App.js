@@ -11,6 +11,7 @@ import User2 from './Pages/User2';
 import Parent from './Pages/Parent';
 import Update from './Pages/Update';
 import FetchDetails from './Pages/FetchDetails';
+import Counter from './Pages/Counter';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           <Route path="/filter-list" element={<FetchDetails/>}/>
         </Routes>
       </BrowserRouter>
-
+      <Counter/>
       {/* <User1/>
       <User2/>
       <Parent/>

@@ -28,6 +28,8 @@ export default function List() {
       .then((res) => res.json())
       .then(() => {
         getListData();
+      }).catch((err) => {
+        console.log(err);
       });
     }
   }
