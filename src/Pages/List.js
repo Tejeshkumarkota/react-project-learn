@@ -11,6 +11,9 @@ export default function List() {
     .then((res) => res.json())
     .then((data) => {
       setListData(data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
     });
   }
 

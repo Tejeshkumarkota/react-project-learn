@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { ThemeContext } from "../ThemeContext";
 
 export default function Navbar() {
 
   const location = useLocation();
+  const { toggleTheme } = useContext(ThemeContext);
 
   return (
     <div className="nav w-100">
-      <nav className="navbar navbar-expand-lg w-100 bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg w-100">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             <img src="/images/logo.png" height="40" width="40" className="img-fluid" alt="Logo" />            
@@ -33,6 +35,18 @@ export default function Navbar() {
               <li className="nav-item">
                 <Link className={"nav-link" + (location.pathname === "/about-us" ? " active" : "")} to="/about-us">
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link className="nav-link" onClick={toggleTheme}>
+                  {/* <button className="btn-primary btn" > */}
+                    {document.body.className == 'light' ? <i className="bi bi-brightness-high"></i>: <i className="bi bi-moon-fill"></i>}
+                  {/* </button> */}
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className={"nav-link" + (location.pathname === "/login" ? " active" : "")} to="/login">
+                  Login
                 </Link>
               </li>
             </ul>

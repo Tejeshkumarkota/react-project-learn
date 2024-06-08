@@ -31,11 +31,14 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Counter/>
+      <Parent/>
       {/* <User1/>
       <User2/>
       <Parent/>
 
       <FetchDetails /> */}
+
+     
     </div>
   );
 }

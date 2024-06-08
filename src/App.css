@@ -43,3 +43,22 @@
   background: url('../public/images/glt-sprites.png') -10px -241px;
   display: inline-block;
 }
+body.light,
+body.light .navbar {
+  background-color: white;
+  color: black;
+}
+
+/* Dark theme */
+body.dark,
+body.dark .navbar {
+  background-color: black;
+  color: white;
+}
+
+body.light .navbar .nav-link {
+  color: black;
+}
+body.dark .navbar .nav-link {
+  color: white;
+}

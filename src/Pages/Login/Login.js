@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./Login.css";
 
@@ -7,6 +7,21 @@ const Login = () => {
     const nav = useNavigate();
     const gotolist = () => 
         nav('/list');
+
+    const inputRefs = useRef([]);
+    inputRefs.current = [];
+
+    useEffect(() => {
+      if (inputRefs.current[0]) {
+        inputRefs.current[0].focus();
+      }
+    }, []);
+
+    const addToRefs = (el) => {
+      if (el && !inputRefs.current.includes(el)) {
+        inputRefs.current.push(el);
+      }
+    };
     
   return (
     <>
@@ -23,6 +38,7 @@ const Login = () => {
                     </label>
                     <input
                       type="email"
+                      ref={addToRefs}
                       className="form-control"
                       id="exampleInputEmail1"
                       autoComplete="off"
@@ -37,6 +53,7 @@ const Login = () => {
                     </label>
                     <input
                       type="password"
+                      ref={addToRefs}
                       className="form-control"
                       id="exampleInputPassword1"
                       autoComplete="off"
