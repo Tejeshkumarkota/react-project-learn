@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { Endpoints } from "../shared/constants/endpoints";
+// import { Endpoints } from "../shared/constants/endpoints";
 
 export default function List() {
   const [listData, setListData] = useState();
   const nav = useNavigate();
 
   const getListData = () => {
-    fetch(Endpoints.STUDENTS)
+    fetch("https://trainingsapi.localinfoz.com/api/product-categories"
+    )
     .then((res) => res.json())
     .then((data) => {
-      setListData(data);
+      setListData(data.data);
+      // console.log(data.data);
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -64,13 +66,18 @@ export default function List() {
                 {listData && listData.map((s) => (
                   <tr key={s.id}>
                     <td>{s.id}</td>
-                    <td>{s.name}</td>
+                    <td>{s.productCategoryName}</td>
                     <td>
                       <button type="button" onClick={()=>nav('/edit/'+s.id)} className="btn btn-sm btn-light mx-2">Edit</button>
                       <button type="button" onClick={()=>deleteStudent(s.id)} className="btn btn-sm btn-danger">Delete</button>
                     </td>
                   </tr>
                 ))}
+                {/* {!Array.isArray(listData) && (
+                <tr>
+                  <td className="text-center" colSpan="3">No data available</td>
+                </tr>
+              )} */}
               </tbody>
             </table>
           </div>
