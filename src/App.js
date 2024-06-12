@@ -28,7 +28,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       {/* <Counter/> */}
-      <Parent/>
+      {/* <Parent/> */}
       {/* <User1/>
       <User2/>
       <Parent/>
