@@ -6,9 +6,10 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Login from './Pages/Login/Login';
 import List from './Pages/List';
 import Create from './Pages/Create';
-import Parent from './Pages/Parent';
+// import Parent from './Pages/Parent';
 import Update from './Pages/Update';
 import FetchDetails from './Pages/FetchDetails';
+import DisplayList from './Pages/DisplayList';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/filter-list" element={<FetchDetails/>}/>
         </Routes>
       </BrowserRouter>
+      <DisplayList/>
       {/* <Counter/> */}
       {/* <Parent/> */}
       {/* <User1/>
