@@ -40,7 +40,9 @@ function App() {
           </Routes>
         </Suspense>
       </BrowserRouter>
+      <DisplayList/>
       {/* <Counter/> */}
+      {/* <Parent/> */}
       {/* <Parent/> */}
       {/* <User1/>
       <User2/>

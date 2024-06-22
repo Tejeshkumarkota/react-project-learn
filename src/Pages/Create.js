@@ -6,6 +6,7 @@ const Create = () => {
 
   const [name, setName] = useState("");
   const nav = useNavigate();
+  
   const createStudent = () => {
     if(name) {
     fetch(Endpoints.STUDENTS,{
@@ -13,10 +14,12 @@ const Create = () => {
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-            // Authorization: "Bearer key"
+            // Authorization: "Bearer 17|t10FEKvdmXCQjnoVfTUkUxw88bxlNNyqdMOTwZfq43663377"
         },
         body: JSON.stringify({
-            name: name
+          productCategoryImage: "",
+          parentProductCategoryId: "",
+          productCategoryName: name
         })
     })
     .then((res) => res.json())
@@ -40,13 +43,13 @@ const Create = () => {
                 <form>
                   <div className="mb-3">
                     <label htmlFor="exampleInputName" className="form-label">
-                      Student Name
+                      Category Name
                     </label>
                     <input
                       type="text"
                       className="form-control"
                       id="exampleInputName"
-                      placeholder="Enter Name"
+                      placeholder="Enter Category Name"
                       onChange={($event) => {
                         setName($event.target.value);
                       }}

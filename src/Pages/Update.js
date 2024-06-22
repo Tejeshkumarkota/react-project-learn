@@ -12,23 +12,25 @@ const Update = () => {
   },[])
 
   const getSelectedData = () => {
-    fetch("http://localhost:3001/students/"+param.studentid)
+    fetch("https://trainingsapi.localinfoz.com/api/product-categories/"+param.studentid)
     .then((res) => res.json())
     .then((data) => {
-      setName(data.name);
+      setName(data.data.productCategoryName);
     });
   }
 
   const updateStudent = () => {
     if(name) {
-    fetch("http://localhost:3001/students/"+param.studentid,{
+    fetch("https://trainingsapi.localinfoz.com/api/product-categories/"+param.studentid,{
         method: "PATCH",
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            name: name
+          productCategoryImage: "",
+          parentProductCategoryId: "",
+          productCategoryName: name
         })
     })
     .then((res) => res.json())
@@ -52,13 +54,13 @@ const Update = () => {
                 <form>
                   <div className="mb-3">
                     <label htmlFor="exampleInputName" className="form-label">
-                      Student Name
+                    Category Name
                     </label>
                     <input
                       type="text"
                       className="form-control"
                       id="exampleInputName"
-                      placeholder="Enter Name"
+                      placeholder="Enter Category Name"
                       onChange={($event) => {
                         setName($event.target.value);
                       }}
