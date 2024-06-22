@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Child(props) {
 
@@ -12,7 +12,10 @@ function Child(props) {
         e.preventDefault();
         props.onSubmit(name);
     }
-
+    useEffect(()=> {
+        console.log('three');
+    },[])
+    console.log('four');
     return ( 
         <>
             <form onSubmit={handleSubmit}>

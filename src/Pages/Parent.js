@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Child from "./Child";
 
 function Parent() {
@@ -6,6 +6,11 @@ function Parent() {
     const getData = (data) => {
         console.log('coming from parent js',data);
     }
+
+    useEffect(()=> {
+        console.log('one');
+    },[])
+    console.log('two');
     return (
         <>
             <Child onSubmit={getData}/>
